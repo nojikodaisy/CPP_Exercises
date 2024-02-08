@@ -44,12 +44,12 @@ int main()
         {
             case 'd':
                 std::cout << "Not implemented yet" << std::endl;
-                // system.add_department(parse_string(next_line));
+                system.add_department(parse_string(next_line));
                 break;
  
             case 'l':
                 std::cout << "Not implemented yet" << std::endl;
-                // system.print_all_departments();
+                system.print_all_departments();
                 break;
 
             case 'e':

@@ -3,6 +3,7 @@
 #include <list>
 #include <ostream>
 #include <string>
+#include <iostream>
 
 class Employee
 {
@@ -13,11 +14,23 @@ public:
 
     void add_subordinate(Employee& subordinate)
     {
-        // TODO - Q3
-        // ...
+        _subordinates.emplace_back(&subordinate);
+    }
+
+    void print_subordinates() {
+        std::cout << "Liste des subordonnées : " << std::endl;
+        for (auto sub : _subordinates)
+        {
+            std::cout << *sub << std::endl;
+        }
     }
 
     friend std::ostream& operator<<(std::ostream&, const Employee&);
+
+    bool operator==(const Employee& other) const
+    {
+        return _name == other._name && _salary == other._salary && _subordinates == other._subordinates; 
+    }
 
 private:
     std::string _name;
