@@ -13,8 +13,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 
 // Pour indiquer qu'une fonction-membre ne modifie pas l'état de l'objet, on écrit const
-// devant le type de retour de la fonction.
-#define ANSWER_1 true
+// devant le type de retour de la fonction. // IL EST TOUT A DROITE
+#define ANSWER_1 false 
 
 // Le type char* est le mieux adapté pour représenter des chaînes de caractères.
 #define ANSWER_2 false
@@ -35,11 +35,11 @@
 #define ANSWER_7 false
 
 // On peut utiliser "inline" pour définir des attributs statiques directement dans la classe.
-#define ANSWER_8 false
+#define ANSWER_8 true
 
 // Si une fonction est définie dans deux fichiers-objets différents, l'erreur se produit lors de la phase de
-// build.
-#define ANSWER_9 true
+// build. AU MOMENT DE LA PHASE DE LINKAGE (IL VA REUSSIR A COMPILER TOUT SEPAREMENT ET C QUAND IL FAIT LE LINKAGE QUE CA VA CRASH)
+#define ANSWER_9 false
 
 // Le mot-clef "auto" sert à définir des variables sans préciser leur valeur initiale.
 #define ANSWER_10 false
