@@ -66,14 +66,21 @@
         "numbers": "cpp",
         "sstream": "cpp",
         "cinttypes": "cpp",
-        "charconv": "cpp",
+        "cstdarg": "cpp",
+        "bitset": "cpp",
         "chrono": "cpp",
+        "codecvt": "cpp",
+        "condition_variable": "cpp",
+        "set": "cpp",
         "ratio": "cpp",
-        "format": "cpp",
-        "semaphore": "cpp",
-        "span": "cpp",
+        "regex": "cpp",
+        "fstream": "cpp",
+        "future": "cpp",
+        "mutex": "cpp",
+        "ranges": "cpp",
         "stop_token": "cpp",
         "thread": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "__nullptr": "cpp"
     }
 }
