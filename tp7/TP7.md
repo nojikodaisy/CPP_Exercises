@@ -65,23 +65,23 @@ int main()
     Herbivore& bird_as_herb = bird;
     Carnivore& bird_as_carn = bird;
 
-    tiger.move();                  // I1
-    tiger_as_animal.move();        // I2
+    tiger.move();                  // I1 appel move de la class Tiger
+    tiger_as_animal.move();        // I2 appel move de la class Tiger car virtuelle
 
-    bird.move();                   // I3
-    bird_as_animal.move();         // I4
+    bird.move();                   // I3 appel move de la class Bird
+    bird_as_animal.move();         // I4 appel move de la class Animal car celle de Bird na pas la même signature donc ça override pas
 
-    bird.can_eat_plant();          // I5
-    bird_as_herb.can_eat_plant();  // I6
-    bird_as_carn.can_eat_plant();  // I7
+    bird.can_eat_plant();          // I5 appel celle de la class Bird
+    bird_as_herb.can_eat_plant();  // I6 appel celle de la class Bird
+    bird_as_carn.can_eat_plant();  // I7 appel celle de la class Carnivor car dans Carnivor la fonction n'est pas virtual
 
-    tiger.can_eat_plant();         // I8
-    tiger.can_eat_meat();          // I9
-    tiger_as_carn.can_eat_meat();  // I10
-
-    bird.type();                   // I11
-    bird_as_animal.type();         // I12
-    tiger_as_animal.type();        // I13
+    tiger.can_eat_plant();         // I8 celle de Carnivor
+    tiger.can_eat_meat();          // I9 celle de Tiger
+    tiger_as_carn.can_eat_meat();  // I10 celle de Carnivor car pas virtuel dans Carnivor 
+ 
+    bird.type();                   // I11 celle de Bird
+    bird_as_animal.type();         // I12 celle de Animal
+    tiger_as_animal.type();        // I13 celle de Animal
 
     return 0;
 }
