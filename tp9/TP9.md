@@ -12,13 +12,13 @@
 
 | Conteneur     | Insertion (en tête / en fin) | Suppression (en tête / en fin) | Accès |
 |---------------|--------------|--------------|--------------|
-| array         |     N/A      |     N/A      |              |
-| vector        |              |              |              |
-| deque         |              |              |              |
-| forward_list  |              |              |              |
-| list          |              |              |              |
-| set           |              |              |              |
-| unordered_set |              |              |              |
+| array         |     N/A      |     N/A      |      O(1)    |
+| vector        |  O(n) / 0(1) |  O(n)  / O(1)|  O(1)        |
+| deque         |      O(1)    |     O(1)     |    O(1)      |
+| forward_list  |  O(1)        |  O(1) N/A        |    O(1)      |
+| list          |      O(1)       |    O(1)          |     N/A        |
+| set           |        O(log(n))    |              |              |
+| unordered_set |     O(1)       |              |              |
 
 2. Supposons que vous ayez récupéré un itérateur sur un élément d'un conteneur avec : `auto it = std::find(ctn.begin(), ctn.end(), element_to_find)`.  
 En fonction du type de conteneur, quelles sont les opérations susceptibles d'invalider cet itérateur ? Essayez d'être précis dans vos réponses.  
