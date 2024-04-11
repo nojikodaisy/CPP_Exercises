@@ -4,6 +4,17 @@
 #include <string>
 #include <vector>
 
+template <unsigned N>
+struct priority_tag : priority_tag<N - 1>
+{};
+template <>
+struct priority_tag<0>
+{};
+
+using low_prior  = priority_tag<0>;
+using mid_prior  = priority_tag<1>;
+using high_prior = priority_tag<2>;
+
 template <typename T>
 auto to_string(const T& data)
 {
@@ -11,6 +22,33 @@ auto to_string(const T& data)
     ss << "<" << typeid(data).name() << ": " << &data << ">";
     return ss.str();
 }
+
+auto to_string(const std::string& data)
+{
+    return data;
+}
+
+auto to_string(const char* data)
+{
+    return std::string { data };
+}
+
+// Q2 (on vérifie que l'appel à std::to_string est possible)
+/*
+template <typename T, 
+          typename Ret = decltype(std::to_string(std::declval<T>()))>
+Ret to_string(T&& ctn) 
+{
+    return std::to_string(ctn);
+}
+*/
+
+template <typename T>
+auto to_string(const T& ctn, high_prior) -> decltype(std::to_string(ctn))
+{
+    return std::to_string(ctn);
+}
+
 
 class Empty
 {};
