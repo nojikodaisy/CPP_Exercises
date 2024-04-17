@@ -3,6 +3,10 @@
 #include <array>
 #include <functional>
 
+template <typename P1, typename P2>
+using CombinedPixel = decltype(std::declval<P1>() + std::declval<P2>());
+
+
 template<typename P, size_t W, size_t H>
 class Image {
 public:
@@ -32,16 +36,19 @@ public:
         return _pixels[j][i];
     } 
 
-    const Image& operator+(const Image& other) {
-        Image<P, W, H> image;
-        for(auto i = 0; i < W; i++) {
-            for (auto j = 0; j < H; j++) {
-                image(i, j) = this(i, j) + other(i, j);
+    template <typename OtherP>
+    Image<CombinedPixel<P, OtherP>, W, H> operator+(const Image<OtherP, W, H>& other) const
+    {
+        Image<CombinedPixel<P, OtherP>, W, H> res;
+        for (size_t i = 0; i < W; i++)
+        {
+            for (size_t j = 0; j < H; j++)
+            {
+                res(i, j) = _pixels[j][i] + other(i, j);
             }
         }
-        return image;
+        return res;
     }
-
     
 
 private:
