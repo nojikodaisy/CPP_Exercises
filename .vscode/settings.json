@@ -81,13 +81,11 @@
         "stop_token": "cpp",
         "thread": "cpp",
         "variant": "cpp",
-<<<<<<< HEAD
-        "__nullptr": "cpp"
-=======
         "forward_list": "cpp",
         "locale": "cpp",
         "xlocbuf": "cpp",
-        "xlocmes": "cpp"
->>>>>>> 54cebec5c62d38cb7d903dab133c4157f6496334
+        "xlocmes": "cpp",
+        "complex": "cpp",
+        "codecvt": "cpp"
     }
 }
