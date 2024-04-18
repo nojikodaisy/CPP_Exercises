@@ -9,7 +9,7 @@ TEST_CASE("Find the correct container.")
 {
     auto dictionary = ANSWER_2 { { "two", 2 }, { "six", 6 } };
 
-    // Contraint: complexity of the access is O(log(n))
+    // Contraint: complexity of the acce    )
     REQUIRE(dictionary["two"] == 2);
     REQUIRE(dictionary["six"] == 6);
 

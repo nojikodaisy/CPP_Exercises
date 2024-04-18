@@ -24,7 +24,7 @@ TEST_CASE("Find the right type for the aliases, and complete the code below")
     REQUIRE(is_lower_than_value(5) == true);
     REQUIRE(is_lower_than_value(11) == false);
 
-    std::string word_1 = "hello";
+    std::string word_1 = "hello"    ;
     std::string word_2 = "PoUeT pOuEt";
     Consumer<std::string> repeat = ANSWER_21;
     repeat(word_1);

@@ -86,7 +86,9 @@
         "xlocbuf": "cpp",
         "xlocmes": "cpp",
         "complex": "cpp",
-        "codecvt": "cpp",
-        "unordered_set": "cpp"
+        "unordered_set": "cpp",
+        "typeindex": "cpp",
+        "__nullptr": "cpp",
+        "__tuple": "cpp"
     }
 }
